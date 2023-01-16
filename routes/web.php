@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ResepController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'admin'], function () {
+    Route::view('/', 'admin.dashboard')->name('admin.dashboard');
+
+    Route::group(['prefix'=>'resep'],function(){
+        Route::get('/',[ResepController::class,'index'])->name('admin.resep');
+        Route::get('/create',[ResepController::class,'create'])->name('admin.resep.create');
+    });
 });
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
