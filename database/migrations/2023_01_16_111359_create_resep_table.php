@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('nama_resep');
             $table->string('vidio');
+            $table->string('thumbnail');
             $table->text('deskripsi');
             $table->string('alat');
+            $table->string('postedby');
             $table->timestamps();
         });
     }

@@ -25,22 +25,39 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th>thumbnail</th>
                                     <th>nama_resep</th>
                                     <th>vidio</th>
                                     <th>deskripsi</th>
                                     <th>alat</th>
+                                    <th>postedby</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($resep as $resep)
+                                @foreach($reseps as $resep)
                                 <tr>
                                     <td>{{ $resep->id }}</td>
+                                    <td>
+                                        <img src="{{asset('storage/thumbnail/'.$resep->thumbnail)}}" width="50%">
+                                    </td>
                                     <td>{{ $resep->nama_resep }}</td>
                                     <td>{{ $resep->vidio }}</td>
                                     <td>{{ $resep->deskripsi }}</td>
                                     <td>{{ $resep->alat }}</td>
-                                    <td>{{ $resep->action }}</td>
+                                    <td>{{ $resep->postedby }}</td>
+                                    <td>
+                                        <a href="{{route('admin.resep.edit',$resep->id)}}" class="btn btn-secondary">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form method="post" action="{{route('admin.resep.destroy',$resep->id)}}">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

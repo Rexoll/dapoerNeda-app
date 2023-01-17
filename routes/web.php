@@ -21,6 +21,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/',[ResepController::class,'index'])->name('admin.resep');
         Route::get('/create',[ResepController::class,'create'])->name('admin.resep.create');
         Route::post('/store',[ResepController::class,'store'])->name('admin.resep.store');
+        Route::get('/edit/{id}',[ResepController::class,'edit'])->name('admin.resep.edit');
+        Route::put('/update/{id}',[ResepController::class,'update'])->name('admin.resep.update');
+        Route::delete('/destroy/{id}',[ResepController::class,'destroy'])->name('admin.resep.destroy');
     });
 });
 

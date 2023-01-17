@@ -14,7 +14,9 @@ class Resep extends Model
     protected $fillable = [
         'nama_resep',
         'vidio',
+        'thumbnail',
         'deskripsi',
-        'alat'
+        'alat',
+        'postedby'
     ];
 }

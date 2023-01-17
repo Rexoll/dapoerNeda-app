@@ -20,24 +20,30 @@ class ResepSeeder extends Seeder
             [
                 'nama_resep' => 'Nasi Goreng Buatan Alifa',
                 'vidio' => 'https://www.youtube.com/watch?v=8ZjtrOktGr0',
+                'thumbnail'=>'',
                 'deskripsi' => 'Nasi goreng adalah makanan sejuta umat dan penyelamat dari kelaparan',
                 'alat' => 'dua buah panci dan 1 wajan',
+                'postedby'=>'alifaanr',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'nama_resep' => 'Soto Betawi buatan alifa',
                 'vidio' => 'https://www.youtube.com/watch?v=8ZjtrOktGr0',
+                'thumbnail'=>'',
                 'deskripsi' => 'Soto betawi adalah makanan khas betawi yang sangat legit',
                 'alat' => 'satu kuali besar',
+                'postedby'=>'alifaanr',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
                 'nama_resep' => 'Nasi Rendang Alifa',
                 'vidio' => 'https://www.youtube.com/watch?v=8ZjtrOktGr0',
+                'thumbnail'=>'',
                 'deskripsi' => 'Nasi goreng adalah makanan sejuta umat dan penyelamat dari kelaparan',
                 'alat' => 'Sodet dan Pisau',
+                'postedby'=>'alifaanr',
                 'created_at' => now(),
                 'updated_at' => now()
             ]
