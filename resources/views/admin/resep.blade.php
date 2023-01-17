@@ -14,10 +14,14 @@
                         <a href="{{ route('admin.resep.create') }}" class="btn btn-warning">Masukkan Resep</a>
                     </div>
                 </div>
-
+                @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{session('success')}}
+                </div>
+                @endif
                 <div class="row">
                     <div class="col-md-12">
-                        <table id="example2" class="table table-bordered table-hover">
+                        <table id="resep" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -29,14 +33,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($resep as $resep)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $resep->id }}</td>
+                                    <td>{{ $resep->nama_resep }}</td>
+                                    <td>{{ $resep->vidio }}</td>
+                                    <td>{{ $resep->deskripsi }}</td>
+                                    <td>{{ $resep->alat }}</td>
+                                    <td>{{ $resep->action }}</td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -45,4 +51,10 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script>
+    $('#resep').DataTable();
+</script>
 @endsection

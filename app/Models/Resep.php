@@ -11,7 +11,7 @@ class Resep extends Model
 
     protected $table = 'resep';
 
-    protected $fillble = [
+    protected $fillable = [
         'nama_resep',
         'vidio',
         'deskripsi',

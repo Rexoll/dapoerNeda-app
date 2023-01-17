@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix'=>'resep'],function(){
         Route::get('/',[ResepController::class,'index'])->name('admin.resep');
         Route::get('/create',[ResepController::class,'create'])->name('admin.resep.create');
+        Route::post('/store',[ResepController::class,'store'])->name('admin.resep.store');
     });
 });
 
