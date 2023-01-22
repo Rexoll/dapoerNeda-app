@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ResepController;
 use App\Http\Controllers\User\ResepController as UserResepController;
+use App\Http\Controllers\User\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\User\ResepController as UserResepController;
 |
 */
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::view('/', 'admin.dashboard')->name('admin.dashboard');
     Route::group(['prefix' => 'resep'], function () {
         Route::get('/', [ResepController::class, 'index'])->name('admin.resep');
@@ -27,11 +28,20 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-Route::group(['prefix' => 'home'], function () {
-    Route::view('/', 'user.user-dashboard')->name('user.dashboard');
+Route::view('/', 'user.user-dashboard')->name('user.dashboard');
+Route::group(['prefix' => 'home', 'middleware' => ['auth']], function () {
     Route::get('/create', [UserResepController::class, 'create'])->name('user.resep.create');
     Route::post('/store', [UserResepController::class, 'store'])->name('user.resep.store');
+    // Route::group(['prefix' => 'user'], function () {
+    //     Route::post('/login', [RegisterController::class, 'login'])->name('user.login');
+    // });
 });
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -14,29 +14,34 @@
     <div>
         <div>
             <!-- NAVBAR -->
-            <div>
+            <div class="">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
-                        <a class="navbar-brand fs-4" href="#">DapoerNeda</a>
+                        <a class="navbar-brand fs-4 ms-4" href="{{ route('user.dashboard') }}">DapoerNeda</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><strong>Home</strong></a>
+                                    <a class="nav-link" href="{{ route('user.dashboard') }}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="{{ route('user.login') }}">
                                         <stronng>Register</stronng>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
-                                        <storng>AboutUs</strong>
+                                        <storng>Resep</strong>
                                     </a>
                                 </li>
                             </ul>
+                            <div class="d-flex justify-content-end gap-2">
+                                <i class="fa-2x fa-brands fa-square-instagram"></i>
+                                <i class="fa-2x fa-brands fa-square-youtube"></i>
+                                <i class="fa-2x fa-brands fa-square-twitter"></i>
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -52,133 +57,134 @@
                             <h4>Join Bersama Kami <br> Membangun Komunitas Resep</h4>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, itaque.</p>
                             <div class="">
-                                <button type="button" class="btn btn-success me-2">Join With Us</button>
-                                <button type="button" class="btn btn-success">About Us</button>
+                                <div>
+                                    <button type="button" class="btn btn-success me-2">Bergabung Bersama Kami</button>
+                                    <a href="{{ route('user.login') }}"></a>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-success">Daftar Resep</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- BAGIAN 1 END -->
+                <!-- BAGIAN 1 END -->
 
-            <!-- CARD TITLE -->
-            <div class="container mt-4 d-flex justify-content-center text-center">
-                <div class="row ">
-                    <div class="col">
-                        <h1>Selamat Datang Pada Website DapoerNeda</h1>
-                        <p>Mari bergabung dan sebarkan resep terenak mu</p>
+                <!-- CARD TITLE -->
+                <div class="container mt-4 d-flex justify-content-center text-center">
+                    <div class="row ">
+                        <div class="col">
+                            <h1>Selamat Datang Pada Website DapoerNeda</h1>
+                            <p>Mari bergabung dan sebarkan resep terenak mu</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="container mt-4">
-                <div class="row gap-4">
-                    <div class="col card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img style="height: 225px;width:400px;" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="container mt-4">
+                    <div class="row gap-4">
+                        <div class="col card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 225px;width:400px;" src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Spageti Brulle</h5>
+                                        <p class="card-text">Spaghetti Brulee artinya adalah campuran resep spaghetti Bolognese dan juga saus béchamel. Untuk proses pembuatannya sendiri dilakukan dengan dipanggang.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img style="height: 225px;width:400px;" src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=410&q=80" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <div class="col card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 225px;width:400px;" src="https://images.unsplash.com/photo-1612240498936-65f5101365d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Donat</h5>
+                                        <p class="card-text">Donat termasuk dalam kategori roti karena menggunakan ragi dan melalui proses pengembangan. Pembuatan donat dapat dibuat dari skala rumahan, UKM, hingga café dan toko spesialis donat.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img style="height: 225px;width:400px;" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <div class="col card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img style="height: 225px;width:400px;" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Salad</h5>
+                                        <p class="card-text">Selada (Belanda: salade; bahasa Inggris: salad) adalah jenis makanan yang terdiri dari campuran sayur-sayuran dan bahan-bahan makanan siap santap.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <hr class="container hr" />
-            <!-- CARD TITLE END -->
-            <!-- CAROUSEL -->
-            <div class="container">
-                <div id="carouselExampleCaptions" class="carousel slide">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <hr class="container hr" />
+                <!-- CARD TITLE END -->
+                <!-- CAROUSEL -->
+                <div class="container">
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img style="height:100vh; width:100vh;" src="https://images.unsplash.com/photo-1625631976982-c6df1654a6ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Mari Memasak</h5>
+                                    <p>Memasak untuk orang orang yang dicinta akan membuat hubungan lebih harmonis</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img style="height:100vh; width:100vh;" src="https://images.unsplash.com/photo-1599458140258-ace48a8ffe05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Sebarkan Resep Yang Anda Temukan Untuk Orang Luas</h5>
+                                    <p>Berbagi resep berarti berbagi cinta untuk orang banyak</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img style="height:100vh; width:100vh;" src="https://images.unsplash.com/photo-1492739159057-7d1896b3c63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Daftar Sekarang</h5>
+                                    <p>Daftarkan diri anda pada website DapoerNeda untuk membagikan cinta lebih luas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img style="height:80vh; width:100vh;" src="https://images.unsplash.com/photo-1625631976982-c6df1654a6ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img style="height:100vh; width:100vh;" src="https://images.unsplash.com/photo-1599458140258-ace48a8ffe05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img style="height:100vh; width:100vh;" src="https://images.unsplash.com/photo-1492739159057-7d1896b3c63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
-            </div>
-            <!-- CAROUSEL END -->
-            <hr class="container hr" />
-            <div class="container mt-4 d-flex justify-content-center text-center">
-                <div class="row">
-                    <div class="">
-                        <h1>Mari ikuti Social Media Kami!</h1>
-                    </div>
-                    <div class="col mt-4 mb-5">
-                        <div>
-                            <button href="">
-                                <i class="fa-3x fa-brands fa-square-instagram">DapoerNeda</i>
-                                <h3>Instagram</h3>
-                            </button>
+                <!-- CAROUSEL END -->
+                <hr class="container hr" />
+                <div class="container mt-4 d-flex justify-content-center text-center">
+                    <div class="row">
+                        <div class="">
+                            <h1>Mari ikuti Social Media Kami!</h1>
+                        </div>
+                        <div class="col mt-4 mb-5">
+                            <div>
+                                <button href="https://www.instagram.com/dapoerneda">
+                                    <i class="fa-3x fa-brands fa-square-instagram">DapoerNeda</i>
+                                    <h3>Instagram</h3>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 
 </html>
