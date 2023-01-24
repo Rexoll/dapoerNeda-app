@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->string('alat');
             $table->string('postedby');
+            $table->string('kategori');
             $table->timestamps();
         });
     }

@@ -17,12 +17,22 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name'=> 'admin',
-            'email'=>'admin@dapoerneda.com',
-            'password'=>Hash::make('sekyung123'),
-            'role'=>'admin',
-            'created_at'=>now(),
-            'updated_at'=>now()
+            [
+                'name' => 'alifa',
+                'email' => 'alifaanr@gmail.com',
+                'password' => Hash::make('sekyung123'),
+                'role' => 'member',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'admin',
+                'email' => 'admin@dapoerneda.com',
+                'password' => Hash::make('sekyung123'),
+                'role' => 'admin',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
         ]);
     }
 }

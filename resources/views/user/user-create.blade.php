@@ -80,9 +80,13 @@
                             <label for="alat">alat</label>
                             <input type="text" class="form-control" id="alat" name="alat" placeholder="Penggorengan, panci, dan sodet" value="{{ old('alat') }}">
                         </div>
-                        <div class="form-group">
-                            <label for="alat">postedby</label>
+                        <div class="form-group mb-3">
+                            <label for="postedby">postedby</label>
                             <input type="text" class="form-control" id="postedby" name="postedby" placeholder="Tuliskan Nama Anda Disini" value="{{ old('postedby') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="kategori">kategori</label>
+                            <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Hidangan Utama,Minuman,Dessert,Camilan" value="{{ old('kategori') }}">
                         </div>
                     </div>
                     <!-- /.card-body -->

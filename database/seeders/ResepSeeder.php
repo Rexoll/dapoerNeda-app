@@ -24,6 +24,7 @@ class ResepSeeder extends Seeder
                 'deskripsi' => 'Nasi goreng adalah makanan sejuta umat dan penyelamat dari kelaparan',
                 'alat' => 'dua buah panci dan 1 wajan',
                 'postedby'=>'alifaanr',
+                'kategori'=>'hidangan utama',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -34,6 +35,7 @@ class ResepSeeder extends Seeder
                 'deskripsi' => 'Soto betawi adalah makanan khas betawi yang sangat legit',
                 'alat' => 'satu kuali besar',
                 'postedby'=>'alifaanr',
+                'kategori'=>'dessert',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -44,6 +46,18 @@ class ResepSeeder extends Seeder
                 'deskripsi' => 'Nasi goreng adalah makanan sejuta umat dan penyelamat dari kelaparan',
                 'alat' => 'Sodet dan Pisau',
                 'postedby'=>'alifaanr',
+                'kategori'=>'minuman',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'nama_resep' => 'Pisang Goreng',
+                'vidio' => 'https://www.youtube.com/watch?v=8ZjtrOktGr0',
+                'thumbnail'=>'',
+                'deskripsi' => 'pisang goreng adalah makanan sejuta umat dan penyelamat dari kelaparan',
+                'alat' => 'Sodet dan Pisau',
+                'postedby'=>'alifaanr',
+                'kategori'=>'camilan',
                 'created_at' => now(),
                 'updated_at' => now()
             ]

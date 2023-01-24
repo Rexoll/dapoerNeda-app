@@ -64,25 +64,25 @@
         <!-- BREADCRUMB END  -->
         <hr class="container hr" />
         <div class="container d-flex text-center justify-content-center mt-5 mb-5">
-            <h1>{{ $resep->nama_resep }}</h1>
+            <h3>{{ $resep->nama_resep }}</h3>
         </div>
         <div class="container mb-5 d-flex text-center">
             <div class="row">
                 <div class="col">
-                    <img style="height: 480px; width:300px" src="https://images.unsplash.com/photo-1602844224601-e003cc449cf1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=409&q=80" alt="">
+                    <img style="height: 480px; width:300px" src="{{ asset('storage/thumbnail/'.$resep->thumbnail) }}" alt="">
                 </div>
                 <div class="col justify-content-center text-center">
                     <div class="row mt-5">
-                        <h4>Nasi Goreng Khas Padang</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis provident perferendis distinctio aliquam delectus consectetur blanditiis earum possimus aperiam, illum, voluptatum obcaecati molestiae officiis dolore.</p>
+                        <h4>{{$resep->nama_resep}}</h4>
+                        <p>{{$resep->deskripsi}}</p>
                     </div>
                     <div class="mt-5">
                         <h4>Alat-Alat Memasak</h4>
-                        <p>Panci,sodet,penggorengan,pisau</p>
+                        <p>{{ $resep->alat }}</p>
                     </div>
                     <div class="mt-5">
                         <h4>Resep Ini DiPosting Oleh</h4>
-                        <p>Alifa Nur Rizqillah</p>
+                        <p>{{$resep->postedby}}</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
         <h4 class="container text-center mb-3 mt-5">Tutorial Memasak</h4>
         <div class="container d-flex justify-content-center mb-5">
             <video width="750px" height="480px" controls>
-                <source src="https://www.youtube.com/watch?v=IGmenm0md94&t=224s" type="video/mp4">
+                <source src="{{$resep->vidio}}" type="video/mp4">
             </video>
         </div>
     </div>

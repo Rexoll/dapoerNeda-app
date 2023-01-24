@@ -37,7 +37,8 @@ class ResepController extends Controller
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
             'postedby'=>'required|string',
-            'alat'=>'required|string'
+            'alat'=>'required|string',
+            'kategori'=>'required|string'
         ]);
         
         $thumbnail = $request->thumbnail;
@@ -60,7 +61,8 @@ class ResepController extends Controller
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
             'alat'=>'required|string',
-            'postedby'=>'required|string'
+            'postedby'=>'required|string',
+            'kategori'=>'required|string'
         ]);
 
         $resep = Resep::find($id);

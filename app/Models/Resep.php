@@ -17,6 +17,7 @@ class Resep extends Model
         'thumbnail',
         'deskripsi',
         'alat',
-        'postedby'
+        'postedby',
+        'kategori'
     ];
 }

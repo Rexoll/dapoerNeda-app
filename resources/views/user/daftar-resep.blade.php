@@ -54,7 +54,7 @@
             <!-- NAVBAR END  -->
         </div>
         <div class="container d-flex mt-5">
-            <div class="col container d-flex justify-content-end mt-5">
+            <div class="col pull-right container d-flex justify-content-end mt-5">
                 <h4>Gudang Resep Dapoer Neda</h4>
             </div>
             <div class="col container d-flex justify-content-start mt-5">
@@ -70,14 +70,14 @@
             </div>
         </div>
         <div class="container">
-            <div class="mt-5 row gap-3">
+            <div class="mt-5 mb-5 row gap-3">
                 @foreach($products as $products)
-                <div class="col card" style="width: 18rem;">
-                    <img style="height: 400px;width:250px;" src="{{ asset('storage/thumbnail/'.$products->thumbnail) }}" class="card-img-top" alt="{{ $products->nama_resep }}">
+                <div class="col-3 col-lg-3 card d-flex justify-content-center shadow-sm p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <img class="rounded mx-auto d-block img-fluid" style="height: 350px;width:250px;" src="{{ asset('storage/thumbnail/'.$products->thumbnail) }}" class="card-img-top" alt="{{ $products->nama_resep }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ $products->nama_resep }}</h5>
                         <p class="card-text">{{ $products->deskripsi }}</p>
-                        <a href="{{ route('user.detail.resep',$products->id) }}" class="btn btn-primary">Go somewhere</a>
+                        <a href="{{ route('user.detail.resep',$products->id) }}" class="btn btn-primary">Lihat Resepnya</a>
                     </div>
                 </div>
                 @endforeach

@@ -31,6 +31,7 @@
                                     <th>deskripsi</th>
                                     <th>alat</th>
                                     <th>postedby</th>
+                                    <th>kategori</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -46,6 +47,7 @@
                                     <td>{{ $resep->deskripsi }}</td>
                                     <td>{{ $resep->alat }}</td>
                                     <td>{{ $resep->postedby }}</td>
+                                    <td>{{ $resep->kategori }}</td>
                                     <td>
                                         <a href="{{route('admin.resep.edit',$resep->id)}}" class="btn btn-secondary">
                                             <i class="fas fa-edit"></i>

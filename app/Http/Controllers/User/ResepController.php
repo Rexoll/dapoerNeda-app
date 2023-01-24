@@ -20,7 +20,7 @@ class ResepController extends Controller
         $search = $request->search;
         $products = Resep::when($search,function($query,$search){
             return $query->where('nama_resep','like',"%{$search}%");
-        })->paginate(4);
+        })->paginate();
         return view('user.daftar-resep', ['products' => $products]);
     }
 
@@ -45,7 +45,8 @@ class ResepController extends Controller
             'vidio' => 'required|url',
             'deskripsi' => 'required|string',
             'postedby' => 'required|string',
-            'alat' => 'required|string'
+            'alat' => 'required|string',
+            'kategori' => 'required|string'
         ]);
 
         $thumbnail = $request->thumbnail;
