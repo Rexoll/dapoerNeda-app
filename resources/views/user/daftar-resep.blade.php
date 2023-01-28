@@ -54,14 +54,13 @@
             <!-- NAVBAR END  -->
         </div>
         <div class="container d-flex mt-5">
-            <div class="col pull-right container d-flex justify-content-end mt-5">
+            <div class="col container d-flex justify-content-end mt-5">
                 <h4>Gudang Resep Dapoer Neda</h4>
             </div>
-            <div class="col container d-flex justify-content-start mt-5">
+            <div class="col-5 container d-flex justify-content-center mt-5">
                 <form action="#" class="col-auto ms-auto">
                     <div class="input-group">
-                        <input type="text" name="search" value="{{ request()->search }}"
-                        placeholder="Search" class="form-control">
+                        <input type="text" name="search" value="{{ request()->search }}" placeholder="Search" class="form-control">
                         <button class="btn btn-secondary" type="submit">
                             Cari Resep Disini
                         </button>
@@ -70,17 +69,22 @@
             </div>
         </div>
         <div class="container">
-            <div class="mt-5 mb-5 row gap-3">
-                @foreach($products as $products)
-                <div class="col-3 col-lg-3 card d-flex justify-content-center shadow-sm p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
-                    <img class="rounded mx-auto d-block img-fluid" style="height: 350px;width:250px;" src="{{ asset('storage/thumbnail/'.$products->thumbnail) }}" class="card-img-top" alt="{{ $products->nama_resep }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $products->nama_resep }}</h5>
-                        <p class="card-text">{{ $products->deskripsi }}</p>
-                        <a href="{{ route('user.detail.resep',$products->id) }}" class="btn btn-primary">Lihat Resepnya</a>
-                    </div>
-                </div>
-                @endforeach
+            <div class="mt-3 mb-5 row gap-3">
+                <ul class="navbar-nav">
+                    <li class="row nav-item gap-4">
+                        @foreach($products as $products)
+                        <div class="col-3 col-lg-3 card d-flex justify-content-center shadow-sm p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <a class="nav-link" href="{{ route('user.detail.resep',$products) }}">
+                                <img class="rounded mx-auto d-block img-fluid" style="height: 350px;width:250px;" src="{{ asset('storage/thumbnail/'.$products->thumbnail) }}" class="card-img-top" alt="{{ $products->nama_resep }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $products->nama_resep }}</h5>
+                                    <p class="card-text">{{ $products->deskripsi }}</p>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

@@ -47,11 +47,14 @@
         <!-- NAVBAR END  -->
     </div>
     <!-- TAMBAH RESEP  -->
-    <div class="container m-5 d-flex justify-content-center text-center">
-        <div class="row">
+    <div class="container mt-4">
+        <div class="row d-flex justify-content-center text-center">
             <h3>Tambahkan Resepmu</h3>
             <p>Tambahkan resepmu disini dan bagikan cita rasa resepmu kepada orang banyak</p>
         </div>
+    </div>
+
+    <div class="container m-3 d-flex justify-content-center text-center">
     </div>
     <!-- TAMBAH RESEP END  -->
     <div class="container">
@@ -77,16 +80,20 @@
                             <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Rendang sangat lah lezat" value="{{ old('deskripsi') }}">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="alat">alat</label>
-                            <input type="text" class="form-control" id="alat" name="alat" placeholder="Penggorengan, panci, dan sodet" value="{{ old('alat') }}">
+                            <div class="mb-3">
+                                <label for="alat" class="form-label">Masukkan Alat-Alat Yang Dibutuh Kan</label>
+                                <textarea class="form-control" id="alat" rows="3" name="alat" placeholder="panci,penggorengan"></textarea>
+                            </div>
                         </div>
                         <div class="form-group mb-3">
                             <label for="postedby">postedby</label>
                             <input type="text" class="form-control" id="postedby" name="postedby" placeholder="Tuliskan Nama Anda Disini" value="{{ old('postedby') }}">
                         </div>
                         <div class="form-group">
-                            <label for="kategori">kategori</label>
-                            <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Hidangan Utama,Minuman,Dessert,Camilan" value="{{ old('kategori') }}">
+                            <div class="mb-3">
+                                <label for="kategori" class="form-label">Masukkan Resep Anda Disini</label>
+                                <textarea class="form-control" id="kategori" name="kategori" placeholder="Bawang,tomat,garam" rows="3" value="{{ old('kategori') }}"></textarea>
+                            </div>
                         </div>
                     </div>
                     <!-- /.card-body -->

@@ -22,7 +22,7 @@
                     <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="{{ route('user.dashboard') }}">
                                     <strong>Home</strong>
                                 </a>
                             </li>
@@ -66,23 +66,22 @@
         <div class="container d-flex text-center justify-content-center mt-5 mb-5">
             <h3>{{ $resep->nama_resep }}</h3>
         </div>
-        <div class="container mb-5 d-flex text-center">
-            <div class="row">
-                <div class="col">
+        <div class="container mb-5 text-center">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-6">
                     <img style="height: 480px; width:300px" src="{{ asset('storage/thumbnail/'.$resep->thumbnail) }}" alt="">
                 </div>
                 <div class="col justify-content-center text-center">
-                    <div class="row mt-5">
-                        <h4>{{$resep->nama_resep}}</h4>
-                        <p>{{$resep->deskripsi}}</p>
+                    <div class="mt-5">
+                        <h3>Resep-Resep Yang Dibutuhkan</h3>
+                        <p>{{$resep->kategori}}</p>
                     </div>
                     <div class="mt-5">
-                        <h4>Alat-Alat Memasak</h4>
+                        <h3>Alat-Alat Memasak</h3>
                         <p>{{ $resep->alat }}</p>
                     </div>
                     <div class="mt-5">
-                        <h4>Resep Ini DiPosting Oleh</h4>
-                        <p>{{$resep->postedby}}</p>
+                        <p style="font-size: medium;"><bold>Resep Ini DiPosting Oleh : {{ $resep->postedby }}</bold></p>
                     </div>
                 </div>
             </div>
@@ -91,7 +90,7 @@
         <h4 class="container text-center mb-3 mt-5">Tutorial Memasak</h4>
         <div class="container d-flex justify-content-center mb-5">
             <video width="750px" height="480px" controls>
-                <source src="{{$resep->vidio}}" type="video/mp4">
+                <source src="{{$resep->vidio}}" type="video/mp4" />
             </video>
         </div>
     </div>

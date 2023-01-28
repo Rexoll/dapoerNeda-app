@@ -30,7 +30,6 @@ class ResepController extends Controller
         return view('user.user-detail', ['resep' => $resep]);
     }
 
-
     public function create()
     {
         return view('user.user-create');
