@@ -15,34 +15,52 @@
         <div>
             <!-- NAVBAR -->
             <div class="">
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <nav style="background-color: #FCAE1E;" class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand fs-4 ms-4" href="{{ route('user.dashboard') }}">DapoerNeda</a>
+                        <a class="navbar-brand fs-4 ms-4 text-white" href="{{ route('user.dashboard') }}">DapoerNeda</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Home</a>
+                                    <a class="nav-link text-white" href="#">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">
-                                        <stronng>Register</stronng>
+                                    <a class="nav-link" href="{{ route('home') }}">
+                                        <stronng class="text-white">Register</stronng>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('user.daftar.products') }}">
-                                        <storng>Resep</strong>
+                                        <storng class="text-white">Resep</strong>
                                     </a>
                                 </li>
                                 <li>
                                 </li>
                             </ul>
                             <div class="d-flex justify-content-end gap-2">
-                                <i class="fa-2x fa-brands fa-square-instagram"></i>
-                                <i class="fa-2x fa-brands fa-square-youtube"></i>
-                                <i class="fa-2x fa-brands fa-square-twitter"></i>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="whatsapp://send?text=Hello&phone=+628557829371">
+                                            <i style="color: white;" class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">
+                                            <i style="color: white;" class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="">
+                                            <i style="color: white;" class="fa-brands fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

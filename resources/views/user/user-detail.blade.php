@@ -13,38 +13,32 @@
     <div>
         <!-- NAVBAR  -->
         <div>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav style="background-color: #FCAE1E;" class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand fs-4 ms-4" href="{{ route('user.dashboard') }}">DapoerNeda</a>
+                    <a class="navbar-brand fs-4 ms-4 text-white" href="{{ route('user.dashboard') }}">DapoerNeda</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.dashboard') }}">
-                                    <strong>Home</strong>
-                                </a>
+                                <a class="nav-link text-white" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">
-                                    <strong>Register</strong>
+                                <a class="nav-link" href="{{ route('home') }}">
+                                    <stronng class="text-white">Register</stronng>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.daftar.products') }}">
-                                    <strong>Resep</strong>
+                                    <storng class="text-white">Resep</strong>
                                 </a>
                             </li>
                             <li>
                             </li>
                         </ul>
                         <div class="d-flex justify-content-end gap-2">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('user.resep.create')}}">Tambahkan Resep Mu!</a>
-                                </li>
-                            </ul>
+                            <a class="nav-link text-white" href="{{route('user.resep.create')}}">Tambahkan Resep Mu!</a>
                         </div>
                     </div>
                 </div>
@@ -81,7 +75,9 @@
                         <p>{{ $resep->alat }}</p>
                     </div>
                     <div class="mt-5">
-                        <p style="font-size: medium;"><bold>Resep Ini DiPosting Oleh : {{ $resep->postedby }}</bold></p>
+                        <p style="font-size: medium;">
+                            <bold>Resep Ini DiPosting Oleh : {{ $resep->postedby }}</bold>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -89,9 +85,7 @@
         <hr class="container hr" />
         <h4 class="container text-center mb-3 mt-5">Tutorial Memasak</h4>
         <div class="container d-flex justify-content-center mb-5">
-            <video width="750px" height="480px" controls>
-                <source src="{{$resep->vidio}}" type="video/mp4" />
-            </video>
+            <iframe width="560" height="315" src="{{$resep->vidio}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

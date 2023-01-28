@@ -49,8 +49,8 @@
                         <input type="text" class="form-control" id="postedby" name="postedby" placeholder="Tuliskan Nama Anda Disini" value="{{ old('postedby') }}">
                     </div>
                     <div class="form-group">
-                        <label for="kategori">kategori</label>
-                        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Tuliskan Nama Anda Disini" value="{{ old('kategori') }}">
+                        <label for="kategori">Masukkan Resep Disini</label>
+                        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="bawang,garam,merica" value="{{ old('kategori') }}">
                     </div>
                 </div>
                 <!-- /.card-body -->
