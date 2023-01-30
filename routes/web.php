@@ -17,9 +17,12 @@ use App\Http\Controllers\User\RegisterController;
 */
 
 Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('/',[UserResepController::class,'index'])->name('user.dashboard');
-    Route::get('/gudangresep',[UserResepController::class,'products'])->name('user.daftar.products');
-    Route::get('/detail/{id}',[UserResepController::class,'detail'])->name('user.detail.resep');
+    Route::get('/', [UserResepController::class, 'index'])->name('user.dashboard');
+});
+
+Route::group(['prefix' => 'resep', 'middleware' => ['auth']], function () {
+    Route::get('/gudangresep', [UserResepController::class, 'products'])->name('user.daftar.products');
+    Route::get('/detail/{id}', [UserResepController::class, 'detail'])->name('user.detail.resep');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
@@ -37,7 +40,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::get('/create', [UserResepController::class, 'create'])->name('user.resep.create');
     Route::post('/store', [UserResepController::class, 'store'])->name('user.resep.store');
-    Route::get('/profile',[UserResepController::class,'profile'])->name('profile');
+    Route::get('/profile', [UserResepController::class, 'profile'])->name('profile');
     Route::get('/edit/{id}', [UserResepController::class, 'edit'])->name('user.resep.edit');
     Route::put('/update/{id}', [UserResepController::class, 'update'])->name('user.resep.update');
     Route::delete('/destroy/{id}', [UserResepController::class, 'destroy'])->name('user.resep.destroy');
@@ -46,4 +49,4 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/logout',[UserResepController::class,'logout'])->name('logout');
+Route::get('/logout', [UserResepController::class, 'logout'])->name('logout');

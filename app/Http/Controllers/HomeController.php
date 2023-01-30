@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Resep;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('HOME');
+        $resep = Resep::where('postedby', Auth::user()->name)->paginate(25);
+        return view('user.profile', ['reseps' => $resep]);
     }
 }

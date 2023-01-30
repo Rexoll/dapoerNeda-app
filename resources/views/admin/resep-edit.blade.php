@@ -42,12 +42,12 @@
                         <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Rendang sangat lah lezat" value="{{ $resep->deskripsi }}">
                     </div>
                     <div class="form-group">
-                        <label for="alat">alat</label>
-                        <input type="text" class="form-control" id="alat" name="alat" placeholder="Penggorengan, panci, dan sodet" value="{{ $resep->alat }}">
+                        <label for="alat">Masukkan Bahan Yang Dibutuhkan</label>
+                        <input type="text" class="form-control" id="alat" name="alat" placeholder="bawang,cabe,kol" value="{{ $resep->alat }}">
                     </div>
                     <div class="form-group">
-                        <label for="kategori">kategori</label>
-                        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Tuliskan Nama Anda Disini" value="{{ $resep->kategori }}">
+                        <label for="kategori">Cara Pembuatan</label>
+                        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Masukkan cara Pembuatan" value="{{ $resep->kategori }}">
                     </div>
                 </div>
                 <!-- /.card-body -->

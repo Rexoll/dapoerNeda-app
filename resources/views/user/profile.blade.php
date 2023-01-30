@@ -13,19 +13,19 @@
     <div class="">
         <nav style="background-color: #FCAE1E;" class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand fs-4 ms-4 text-white" href="{{ route('user.dashboard') }}">DapoerNeda</a>
+                <div class="row">
+                    <a class="col ms-3" href="{{route('user.dashboard')}}">
+                        <img src="{{asset('image/LogoDapoerNeda.png')}}" style="height: 48px; width:50px;" alt="">
+                    </a>
+                    <a class="navbar-brand fs-5 text-white col" href="{{ route('user.dashboard') }}">Dapoer Ne'da</a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">
-                                <stronng class="text-white">Register</stronng>
-                            </a>
+                            <a class="nav-link text-white" href="{{route('user.dashboard')}}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.daftar.products') }}">
@@ -35,20 +35,22 @@
                         <li>
                         </li>
                     </ul>
-                    <div class="d-flex justify-content-end">
-                        <div class="dropdown-center dropdown-toggle text-white">
-                            <button class="btn text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <h5>Halo, {{ auth()->user()->name }}</h5>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="logout nav-link m-1" href="{{ route('logout') }}">logout</a></li>
-                            </ul>
-                        </div>
+                    <div class="dropdown">
+                        <button class="btn btn-transperency text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Selamat Datang {{ auth()->user()->name }}
+
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{route('profile')}}">Buka Profile Mu</a></li>
+                            <li><a class="dropdown-item" href="{{route('user.resep.create')}}">Tambahkan Resep Ala Kamu yu!</a></li>
+                            <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                        </ul>
                     </div>
                 </div>
+            </div>
         </nav>
     </div>
-    <div class="container d-flex justify-content-center mt-5">
+    <div class="container d-flex justify-content-center mt-5 mb-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-primary">
@@ -74,7 +76,6 @@
                                 <table id="resep" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Id</th>
                                             <th>thumbnail</th>
                                             <th>nama_resep</th>
                                             <th>vidio</th>
@@ -88,9 +89,8 @@
                                     <tbody>
                                         @foreach($reseps as $resep)
                                         <tr>
-                                            <td>{{ $resep->id }}</td>
                                             <td>
-                                                <img src="{{asset('storage/thumbnail/'.$resep->thumbnail)}}" width="50%">
+                                                <img class="rounded mx-auto d-block" src="{{asset('storage/thumbnail/'.$resep->thumbnail)}}" width="50%">
                                             </td>
                                             <td>{{ $resep->nama_resep }}</td>
                                             <td>{{ $resep->vidio }}</td>
@@ -121,6 +121,11 @@
             </div>
         </div>
     </div>
+    @section('js')
+    <script>
+        $('#resep').DataTable();
+    </script>
+    @endsection
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 

@@ -15,19 +15,19 @@
         <div class="">
             <nav style="background-color: #FCAE1E;" class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand fs-4 ms-4 text-white" href="{{ route('user.dashboard') }}">DapoerNeda</a>
+                    <div class="row">
+                        <a class="col ms-3" href="{{route('user.dashboard')}}">
+                            <img src="{{asset('image/LogoDapoerNeda.png')}}" style="height: 48px; width:50px;" alt="">
+                        </a>
+                        <a class="navbar-brand fs-5 text-white col" href="{{ route('user.dashboard') }}">Dapoer Ne'da</a>
+                    </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home') }}">
-                                    <stronng class="text-white">Register</stronng>
-                                </a>
+                                <a class="nav-link text-white" href="{{route('user.dashboard')}}">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.daftar.products') }}">
@@ -37,18 +37,19 @@
                             <li>
                             </li>
                         </ul>
-                        <div class="d-flex justify-content-end">
-                            <div class="dropdown-center dropdown-toggle text-white">
-                                <button class="btn text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <h5>Halo, {{ auth()->user()->name }}</h5>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="logout nav-link m-1" href="{{ route('logout') }}">logout</a></li>
-                                    <li><a class="logout nav-link m-1" href="{{ route('profile') }}">BukaProfile</a></li>
-                                </ul>
-                            </div>
+                        <div class="dropdown">
+                            <button class="btn btn-transperency text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Selamat Datang {{ auth()->user()->name }}
+
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{route('profile')}}">Buka Profile Mu</a></li>
+                                <li><a class="dropdown-item" href="{{route('user.resep.create')}}">Tambahkan Resep Ala Kamu yu!</a></li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                            </ul>
                         </div>
                     </div>
+                </div>
             </nav>
         </div>
         <!-- NAVBAR END  -->
@@ -95,7 +96,7 @@
                         <div class="form-group mb-3">
                             <div class="mb-3">
                                 <label for="alat" class="form-label">Cara Pembuatan</label>
-                                <textarea class="form-control" id="alat" rows="3" name="alat" placeholder="Masukkan Alat Alat yang Dibutuhkan " value="{{ old('alat') }}"></textarea>
+                                <textarea class="form-control" id="alat" rows="3" name="alat" placeholder="Masukkan Langkah Langkah Pembuatan" value="{{ old('alat') }}"></textarea>
                             </div>
                         </div>
                     </div>

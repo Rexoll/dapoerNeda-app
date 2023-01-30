@@ -57,8 +57,7 @@ class ResepController extends Controller
         $data['postedby'] = auth()->user()->name;
         Resep::create($data);
 
-        return redirect()->route('profile')->with('success','Resep Created');
-
+        return redirect()->route('profile')->with('success', 'Resep Created');
     }
     public function logout(Request $request)
     {
@@ -73,14 +72,14 @@ class ResepController extends Controller
 
     public function profile()
     {
-        $resep = Resep::where('postedby', Auth::user()->name)->paginate(4);
+        $resep = Resep::where('postedby', Auth::user()->name)->paginate(25);
         return view('user.profile', ['reseps' => $resep]);
     }
 
     public function edit($id)
     {
         $resep = Resep::find($id);
-        return view('user.user-update',['resep'=>$resep]);
+        return view('user.user-update', ['resep' => $resep]);
     }
 
     public function update(Request $request, $id)
@@ -88,11 +87,10 @@ class ResepController extends Controller
         $data = $request->except('_token');
         $request->validate([
             'nama_resep' => 'required|string',
-            'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
+            'thumbnail' => 'image|mimes:jpeg,jpg,png',
             'vidio' => 'required|url',
             'deskripsi' => 'required|string',
             'alat' => 'required|string',
-            'postedby' => 'required|string',
             'kategori' => 'required|string'
         ]);
 
@@ -103,6 +101,7 @@ class ResepController extends Controller
             $thumbnail->storeAs('public/thumbnail', $thumbnailName);
             $data['thumbnail'] = $thumbnailName;
 
+            $data['postedby'] = auth()->user()->name;
             Storage::delete('public/thumbnail/' . $resep->thumbnail);
         }
 
@@ -113,7 +112,6 @@ class ResepController extends Controller
     public function destroy($id)
     {
         Resep::find($id)->delete();
-        return redirect()->route('profile')->with('success','Resep Deleted');
-
+        return redirect()->route('profile')->with('success', 'Resep Deleted');
     }
 }

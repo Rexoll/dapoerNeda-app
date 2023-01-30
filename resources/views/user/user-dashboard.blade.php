@@ -17,14 +17,19 @@
             <div class="">
                 <nav style="background-color: #FCAE1E;" class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand fs-4 ms-4 text-white" href="{{ route('user.dashboard') }}">DapoerNeda</a>
+                        <div class="row">
+                            <a class="col ms-3" href="{{route('user.dashboard')}}">
+                                <img src="{{asset('image/LogoDapoerNeda.png')}}" style="height: 48px; width:50px;" alt="">
+                            </a>
+                            <a class="navbar-brand fs-5 text-white col" href="{{ route('user.dashboard') }}">Dapoer Ne'da</a>
+                        </div>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#">Home</a>
+                                    <a class="nav-link text-white" href="{{route('user.dashboard')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('home') }}">
@@ -42,21 +47,21 @@
                             <div class="d-flex justify-content-end gap-2">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="whatsapp://send?text=Hello&phone=+628557829371">
+                                        <a class="nav-link" href="whatsapp://send?text=Hello&phone=+6281316261862">
                                             <i style="color: white;" class="fa-brands fa-whatsapp"></i>
                                         </a>
                                     </li>
                                 </ul>
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="">
+                                        <a class="nav-link" href="https://www.instagram.com/dapoerneda">
                                             <i style="color: white;" class="fa-brands fa-instagram"></i>
                                         </a>
                                     </li>
                                 </ul>
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="">
+                                        <a class="nav-link" href="https://www.youtube.com/@dapoerneda">
                                             <i style="color: white;" class="fa-brands fa-youtube"></i>
                                         </a>
                                     </li>
@@ -78,7 +83,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, itaque.</p>
                             <div class="d-flex justify-content-center">
                                 <div class="me-3">
-                                    <a href="{{ route('register') }}" class="btn btn-success">Buka Akun Anda Disini</a>
+                                    <a href="{{ route('home') }}" class="btn btn-success">Buka Akun Anda Disini</a>
                                 </div>
                                 <div>
                                     <a href="{{ route('user.daftar.products') }}" class="btn btn-success">Cek Resep Disini</a>

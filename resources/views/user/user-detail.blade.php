@@ -1,4 +1,3 @@
-@extends('layouts.app')
 <!doctype html>
 <html lang="en">
 
@@ -16,19 +15,19 @@
         <div>
             <nav style="background-color: #FCAE1E;" class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand fs-4 ms-4 text-white" href="{{ route('user.dashboard') }}">DapoerNeda</a>
+                    <div class="row">
+                        <a class="col ms-3" href="{{route('user.dashboard')}}">
+                            <img src="{{asset('image/LogoDapoerNeda.png')}}" style="height: 48px; width:50px;" alt="">
+                        </a>
+                        <a class="navbar-brand fs-5 text-white col" href="{{ route('user.dashboard') }}">Dapoer Ne'da</a>
+                    </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home') }}">
-                                    <stronng class="text-white">Register</stronng>
-                                </a>
+                                <a class="nav-link text-white" href="{{route('user.dashboard')}}">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user.daftar.products') }}">
@@ -38,10 +37,16 @@
                             <li>
                             </li>
                         </ul>
-                        <div class="d-flex justify-content-end gap-2">
-                            <div class="d-flex justify-content-end gap-2">
-                                <a class="nav-link text-white" href="{{route('user.resep.create')}}">Tambahkan Resep Mu!</a>
-                            </div>
+                        <div class="dropdown">
+                            <button class="btn btn-transperency text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Selamat Datang {{ auth()->user()->name }}
+
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{route('profile')}}">Buka Profile Mu</a></li>
+                                <li><a class="dropdown-item" href="{{route('user.resep.create')}}">Tambahkan Resep Ala Kamu yu!</a></li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -70,25 +75,32 @@
                 </div>
                 <div class="col justify-content-center text-center">
                     <div class="mt-5">
+                        <h3>Cara Pembuatan</h3>
+                        <p>{{ $resep->alat }}</p>
+                    </div>
+                    <div class="mt-5">
                         <h3>Resep-Resep Yang Dibutuhkan</h3>
                         <p>{{$resep->kategori}}</p>
                     </div>
                     <div class="mt-5">
-                        <h3>Alat-Alat Memasak</h3>
-                        <p>{{ $resep->alat }}</p>
-                    </div>
-                    <div class="mt-5">
-                        <p style="font-size: medium;">
-                            <bold>Resep Ini DiPosting Oleh : {{ $resep->postedby }}</bold>
-                        </p>
+                        <h3>Deskripsi</h3>
+                        <p>{{$resep->deskripsi}}</p>
                     </div>
                 </div>
             </div>
         </div>
+
         <hr class="container hr" />
-        <h4 class="container text-center mb-3 mt-5">video pbuatan {{ $resep->nama_resep }}</h4>
+
+        <h4 class="container text-center mb-3 mt-5">Video Pembuatan {{ $resep->nama_resep }}</h4>
         <div class="container d-flex justify-content-center mb-5">
             <iframe width="560" height="315" src="{{$resep->vidio}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+        <div class="m-5 d-flex justify-content-center">
+            <p style="font-size: medium;">
+                <bold>Resep Ini Diposting Oleh : {{ $resep->postedby }}</bold>
+            </p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
