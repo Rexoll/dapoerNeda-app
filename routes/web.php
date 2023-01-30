@@ -37,8 +37,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 Route::group(['prefix' => 'user', 'middleware' => ['auth']], function () {
     Route::get('/create', [UserResepController::class, 'create'])->name('user.resep.create');
     Route::post('/store', [UserResepController::class, 'store'])->name('user.resep.store');
+    Route::get('/profile',[UserResepController::class,'profile'])->name('profile');
+    Route::get('/edit/{id}', [UserResepController::class, 'edit'])->name('user.resep.edit');
+    Route::put('/update/{id}', [UserResepController::class, 'update'])->name('user.resep.update');
+    Route::delete('/destroy/{id}', [UserResepController::class, 'destroy'])->name('user.resep.destroy');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/logout',[UserResepController::class,'logout'])->name('logout');

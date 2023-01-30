@@ -46,10 +46,6 @@
                         <input type="text" class="form-control" id="alat" name="alat" placeholder="Penggorengan, panci, dan sodet" value="{{ $resep->alat }}">
                     </div>
                     <div class="form-group">
-                        <label for="alat">postedby</label>
-                        <input type="text" class="form-control" id="postedby" name="postedby" placeholder="Tuliskan Nama Anda Disini" value="{{ $resep->postedby }}">
-                    </div>
-                    <div class="form-group">
                         <label for="kategori">kategori</label>
                         <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Tuliskan Nama Anda Disini" value="{{ $resep->kategori }}">
                     </div>

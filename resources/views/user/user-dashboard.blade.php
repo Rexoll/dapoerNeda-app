@@ -78,7 +78,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, itaque.</p>
                             <div class="d-flex justify-content-center">
                                 <div class="me-3">
-                                    <a href="{{ route('register') }}" class="btn btn-success">Bergabung Bersama Kami Sekarang</a>
+                                    <a href="{{ route('register') }}" class="btn btn-success">Buka Akun Anda Disini</a>
                                 </div>
                                 <div>
                                     <a href="{{ route('user.daftar.products') }}" class="btn btn-success">Cek Resep Disini</a>

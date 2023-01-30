@@ -37,9 +37,15 @@
                             <li>
                             </li>
                         </ul>
-                        <div class="d-flex justify-content-end gap-2">
-                            <div class="m-3 text-white">
-                                <h5>Halo Selamat Datang, {{ auth()->user()->name }}</h5>
+                        <div class="d-flex justify-content-end">
+                            <div class="dropdown-center dropdown-toggle text-white">
+                                <button class="btn text-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <h5>Halo, {{ auth()->user()->name }}</h5>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="logout nav-link m-1" href="{{ route('logout') }}">logout</a></li>
+                                    <li><a class="logout nav-link m-1" href="{{ route('profile') }}">BukaProfile</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -80,20 +86,16 @@
                             <label for="deskripsi">Deskripsi</label>
                             <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Rendang sangat lah lezat" value="{{ old('deskripsi') }}">
                         </div>
-                        <div class="form-group mb-3">
+                        <div class="form-group">
                             <div class="mb-3">
-                                <label for="alat" class="form-label">Masukkan Alat-Alat Yang Dibutuh Kan</label>
-                                <textarea class="form-control" id="alat" rows="3" name="alat" placeholder="panci,penggorengan"></textarea>
+                                <label for="kategori" class="form-label">Masukkan bahan bahan yang dibutuhkan</label>
+                                <textarea class="form-control" id="kategori" name="kategori" placeholder="Bawang,tomat,garam" rows="3" value="{{ old('kategori') }}"></textarea>
                             </div>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="postedby">postedby</label>
-                            <input type="text" class="form-control" id="postedby" name="postedby" placeholder="Tuliskan Nama Anda Disini" value="{{ old('postedby') }}">
-                        </div>
-                        <div class="form-group">
                             <div class="mb-3">
-                                <label for="kategori" class="form-label">Masukkan Resep Anda Disini</label>
-                                <textarea class="form-control" id="kategori" name="kategori" placeholder="Bawang,tomat,garam" rows="3" value="{{ old('kategori') }}"></textarea>
+                                <label for="alat" class="form-label">Cara Pembuatan</label>
+                                <textarea class="form-control" id="alat" rows="3" name="alat" placeholder="Masukkan Alat Alat yang Dibutuhkan " value="{{ old('alat') }}"></textarea>
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,6 @@
 
 @section('content')
 
-<h1>hai ini coba</h1>
+<h1>Halo, admin!</h1>
 
 @endsection()

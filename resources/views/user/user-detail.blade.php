@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <!doctype html>
 <html lang="en">
 
@@ -38,7 +39,9 @@
                             </li>
                         </ul>
                         <div class="d-flex justify-content-end gap-2">
-                            <a class="nav-link text-white" href="{{route('user.resep.create')}}">Tambahkan Resep Mu!</a>
+                            <div class="d-flex justify-content-end gap-2">
+                                <a class="nav-link text-white" href="{{route('user.resep.create')}}">Tambahkan Resep Mu!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,7 +86,7 @@
             </div>
         </div>
         <hr class="container hr" />
-        <h4 class="container text-center mb-3 mt-5">Tutorial Memasak</h4>
+        <h4 class="container text-center mb-3 mt-5">video pbuatan {{ $resep->nama_resep }}</h4>
         <div class="container d-flex justify-content-center mb-5">
             <iframe width="560" height="315" src="{{$resep->vidio}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
