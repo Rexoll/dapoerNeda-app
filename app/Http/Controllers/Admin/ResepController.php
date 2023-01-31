@@ -63,7 +63,7 @@ class ResepController extends Controller
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
             'alat'=>'required|string',
-            'postedby'=>'required|string',
+            // 'postedby'=>'required|string',
             'kategori'=>'required|string'
         ]);
 
