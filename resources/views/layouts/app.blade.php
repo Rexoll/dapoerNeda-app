@@ -29,12 +29,7 @@
                 <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">
-                                <stronng class="text-white">Register</stronng>
-                            </a>
+                            <a class="nav-link text-white" href="{{route('user.dashboard')}}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.daftar.products') }}">
