@@ -37,7 +37,7 @@ class ResepController extends Controller
             'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
-            'postedby'=>'required|string',
+            // 'postedby'=>'required|string',
             'alat'=>'required|string',
             'kategori'=>'required|string'
         ]);
@@ -47,6 +47,7 @@ class ResepController extends Controller
         $thumbnail->storeAs('public/thumbnail', $thumbnailName);
         $data['thumbnail'] = $thumbnailName;
         
+        $data['postedby'] = auth()->user()->name;
         Resep::create($data);
 
         return redirect()->route('admin.resep')->with('success','Resep Created');
