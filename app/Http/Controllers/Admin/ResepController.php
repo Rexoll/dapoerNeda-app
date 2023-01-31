@@ -59,7 +59,7 @@ class ResepController extends Controller
         $data = $request->except('_token');
         $request->validate([
             'nama_resep'=>'required|string',
-            'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
+            // 'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
             'alat'=>'required|string',
