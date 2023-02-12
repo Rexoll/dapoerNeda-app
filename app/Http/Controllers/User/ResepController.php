@@ -45,8 +45,8 @@ class ResepController extends Controller
             'vidio' => 'required|url',
             'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
             'deskripsi' => 'required|string',
-            'kategori' => 'required|string',
-            'alat' => 'required|string',
+            'bahan' => 'required|string',
+            'cara_pembuatan' => 'required|string',
         ]);
 
         $thumbnail = $request->thumbnail;
@@ -90,8 +90,8 @@ class ResepController extends Controller
             'thumbnail' => 'image|mimes:jpeg,jpg,png',
             'vidio' => 'required|url',
             'deskripsi' => 'required|string',
-            'alat' => 'required|string',
-            'kategori' => 'required|string'
+            'cara_pembuatan' => 'required|string',
+            'bahan' => 'required|string'
         ]);
 
         $resep = Resep::find($id);

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Dapoer Ne'da | Create</title>
     <script src="https://kit.fontawesome.com/51dea02ab7.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
@@ -89,14 +89,14 @@
                         </div>
                         <div class="form-group">
                             <div class="mb-3">
-                                <label for="kategori" class="form-label">Masukkan bahan bahan yang dibutuhkan</label>
-                                <textarea class="form-control" id="kategori" name="kategori" placeholder="Bawang,tomat,garam" rows="3" value="{{ old('kategori') }}"></textarea>
+                                <label for="bahan" class="form-label">Masukkan bahan bahan yang dibutuhkan</label>
+                                <textarea class="form-control" id="bahan" name="bahan" placeholder="Bawang,tomat,garam" rows="3" value="{{ old('bahan') }}"></textarea>
                             </div>
                         </div>
                         <div class="form-group mb-3">
                             <div class="mb-3">
-                                <label for="alat" class="form-label">Cara Pembuatan</label>
-                                <textarea class="form-control" id="alat" rows="3" name="alat" placeholder="Masukkan Langkah Langkah Pembuatan" value="{{ old('alat') }}"></textarea>
+                                <label for="cara_pembuatan" class="form-label">Cara Pembuatan</label>
+                                <textarea class="form-control" id="cara_pembuatan" rows="3" name="cara_pembuatan" placeholder="Masukkan Alat Alat yang Dibutuhkan " value="{{ old('cara_pembuatan') }}"></textarea>
                             </div>
                         </div>
                     </div>

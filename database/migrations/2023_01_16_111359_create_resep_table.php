@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('vidio');
             $table->string('thumbnail');
             $table->text('deskripsi');
-            $table->string('alat');
+            $table->string('cara_pembuatan');
             $table->string('postedby');
-            $table->string('kategori');
+            $table->string('bahan');
             $table->timestamps();
         });
     }

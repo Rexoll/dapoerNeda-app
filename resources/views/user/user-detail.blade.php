@@ -75,15 +75,15 @@
                 </div>
                 <div class="col justify-content-center text-center">
                     <div class="mt-5">
-                        <h3>Cara Pembuatan</h3>
-                        <p>{{ $resep->alat }}</p>
+                        <h4>Cara Pembuatan</h4>
+                        <p>{{ $resep->cara_pembuatan }}</p>
                     </div>
                     <div class="mt-5">
-                        <h3>Resep-Resep Yang Dibutuhkan</h3>
-                        <p>{{$resep->kategori}}</p>
+                        <h4>Bahan Bahan yang dibutuhkan untuk memasak {{$resep->nama_resep}}</h4>
+                        <p>{{$resep->bahan}}</p>
                     </div>
                     <div class="mt-5">
-                        <h3>Deskripsi</h3>
+                        <h4>Deskripsi</h4>
                         <p>{{$resep->deskripsi}}</p>
                     </div>
                 </div>

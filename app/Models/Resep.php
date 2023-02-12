@@ -16,8 +16,8 @@ class Resep extends Model
         'vidio',
         'thumbnail',
         'deskripsi',
-        'alat',
+        'cara_pembuatan',
         'postedby',
-        'kategori'
+        'bahan'
     ];
 }

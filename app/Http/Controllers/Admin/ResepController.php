@@ -37,15 +37,17 @@ class ResepController extends Controller
             'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
-            'postedby'=>'required|string',
-            'alat'=>'required|string',
-            'kategori'=>'required|string'
+            // 'postedby'=>'required|string',
+            'cara_pembuatan'=>'required|string',
+            'bahan'=>'required|string'
         ]);
         
         $thumbnail = $request->thumbnail;
         $thumbnailName = Str::random(10) . $thumbnail->getClientOriginalName();
         $thumbnail->storeAs('public/thumbnail', $thumbnailName);
         $data['thumbnail'] = $thumbnailName;
+        $data['postedby'] = auth()->user()->name;
+
         
         Resep::create($data);
 
@@ -61,9 +63,9 @@ class ResepController extends Controller
             'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
-            'alat'=>'required|string',
-            'postedby'=>'required|string',
-            'kategori'=>'required|string'
+            'cara_pembuatan'=>'required|string',
+            // 'postedby'=>'required|string',
+            'bahan'=>'required|string'
         ]);
 
         $resep = Resep::find($id);

@@ -29,9 +29,9 @@
                                     <th>nama_resep</th>
                                     <th>vidio</th>
                                     <th>deskripsi</th>
-                                    <th>alat</th>
+                                    <th>caraPembuatan</th>
                                     <th>postedby</th>
-                                    <th>kategori</th>
+                                    <th>bahan</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -45,9 +45,9 @@
                                     <td>{{ $resep->nama_resep }}</td>
                                     <td>{{ $resep->vidio }}</td>
                                     <td>{{ $resep->deskripsi }}</td>
-                                    <td>{{ $resep->alat }}</td>
+                                    <td>{{ $resep->cara_pembuatan }}</td>
                                     <td>{{ $resep->postedby }}</td>
-                                    <td>{{ $resep->kategori }}</td>
+                                    <td>{{ $resep->bahan }}</td>
                                     <td>
                                         <a href="{{route('admin.resep.edit',$resep->id)}}" class="btn btn-secondary">
                                             <i class="fas fa-edit"></i>

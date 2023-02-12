@@ -38,16 +38,16 @@
                         <input type="file" class="form-control" id="thumbnail" name="thumbnail" placeholder="Mohon Sertakan Foto Makanannya" value="{{ $resep->thumbnail }}">
                     </div>
                     <div class="form-group">
-                        <label for="deskripsi">Deskripsi</label>
-                        <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Rendang sangat lah lezat" value="{{ $resep->deskripsi }}">
+                        <label for="cara_pembuatan">Deskripsi</label>
+                        <input type="text" class="form-control" id="cara_pembuatan" name="cara_pembuatan" placeholder="Rendang sangat lah lezat" value="{{ $resep->cara_pembuatan }}">
                     </div>
                     <div class="form-group">
-                        <label for="alat">Masukkan Bahan Yang Dibutuhkan</label>
-                        <input type="text" class="form-control" id="alat" name="alat" placeholder="bawang,cabe,kol" value="{{ $resep->alat }}">
+                        <label for="bahan">Masukkan Bahan Yang Dibutuhkan</label>
+                        <input type="text" class="form-control" id="bahan" name="bahan" placeholder="bawang,cabe,kol" value="{{ $resep->bahan }}">
                     </div>
                     <div class="form-group">
-                        <label for="kategori">Cara Pembuatan</label>
-                        <input type="text" class="form-control" id="kategori" name="kategori" placeholder="Masukkan cara Pembuatan" value="{{ $resep->kategori }}">
+                        <label for="cara_pembuatan">Cara Pembuatan</label>
+                        <input type="text" class="form-control" id="cara_pembuatan" name="cara_pembuatan" placeholder="Masukkan cara Pembuatan" value="{{ $resep->cara_pembuatan }}">
                     </div>
                 </div>
                 <!-- /.card-body -->
