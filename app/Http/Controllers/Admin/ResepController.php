@@ -38,8 +38,13 @@ class ResepController extends Controller
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
             // 'postedby'=>'required|string',
+<<<<<<< HEAD
             'cara_pembuatan'=>'required|string',
             'bahan'=>'required|string'
+=======
+            'alat'=>'required|string',
+            'kategori'=>'required|string'
+>>>>>>> 1b0c4141d8a8a291cd3dc76bed485e353dea7580
         ]);
         
         $thumbnail = $request->thumbnail;
@@ -49,6 +54,7 @@ class ResepController extends Controller
         $data['postedby'] = auth()->user()->name;
 
         
+        $data['postedby'] = auth()->user()->name;
         Resep::create($data);
 
         return redirect()->route('admin.resep')->with('success','Resep Created');
@@ -60,12 +66,18 @@ class ResepController extends Controller
         $data = $request->except('_token');
         $request->validate([
             'nama_resep'=>'required|string',
-            'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
+            // 'thumbnail' => 'required|image|mimes:jpeg,jpg,png',
             'vidio'=>'required|url',
             'deskripsi'=>'required|string',
+<<<<<<< HEAD
             'cara_pembuatan'=>'required|string',
             // 'postedby'=>'required|string',
             'bahan'=>'required|string'
+=======
+            'alat'=>'required|string',
+            // 'postedby'=>'required|string',
+            'kategori'=>'required|string'
+>>>>>>> 1b0c4141d8a8a291cd3dc76bed485e353dea7580
         ]);
 
         $resep = Resep::find($id);
