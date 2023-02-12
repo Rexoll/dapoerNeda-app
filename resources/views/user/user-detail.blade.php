@@ -76,7 +76,7 @@
                 <div class="col justify-content-center text-center">
                     <div class="mt-5">
                         <h3>Cara Pembuatan</h3>
-                        <p>{{ $resep->alat }}</p>
+                        <p>{{ $resep->cara_pembuatan }}</p>
                     </div>
                     <div class="mt-5">
                         <h4>Bahan Bahan yang dibutuhkan untuk memasak {{$resep->nama_resep}}</h4>
