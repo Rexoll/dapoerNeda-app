@@ -52,7 +52,7 @@ class ResepController extends Controller
         $thumbnail = $request->thumbnail;
         $thumbnailName = Str::random(10) . $thumbnail->getClientOriginalName();
         $thumbnail->storeAs('public/thumbnail', $thumbnailName);
-        $data['thumbnail'] = $thumbnailName;
+        $data['thumbnail'] = 'http://dapoerneda.my.id/image/' . $thumbnailName;
 
         $data['postedby'] = auth()->user()->name;
         Resep::create($data);
@@ -99,7 +99,7 @@ class ResepController extends Controller
             $thumbnail = $request->thumbnail;
             $thumbnailName = Str::random(10) . $thumbnail->getClientOriginalName();
             $thumbnail->storeAs('public/thumbnail', $thumbnailName);
-            $data['thumbnail'] = $thumbnailName;
+            $data['thumbnail'] = 'http://dapoerneda.my.id/image/' . $thumbnailName;
 
             $data['postedby'] = auth()->user()->name;
             Storage::delete('public/thumbnail/' . $resep->thumbnail);
