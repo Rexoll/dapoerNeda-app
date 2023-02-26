@@ -47,17 +47,10 @@ class ResepController extends Controller
         $image = $request->file('thumbnail');
         $nameGen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
         Image::make($image)->resize(400, 400)->save('upload/foodsthumbnail/' . $nameGen);
-        $saveUrl = 'upload/foodsthumbnail/' . $nameGen;
-        Storage::delete('https://api.serbadiskon.id/upload/foodsthumbnail/' . $dataProfile->thumbnail);
-
-        $thumbnail = $request->thumbnail;
-        $thumbnailName = Str::random(10) . $thumbnail->getClientOriginalName();
-        $thumbnail->storeAs('public/thumbnail', $thumbnailName);
-        $data['thumbnail'] = 'http://dapoerneda.my.id/image/' . $thumbnailName;
+        $saveUrl = 'http://dapoerneda.my.id/upload/foodsthumbnail/' . $nameGen;
+        $data['thumbnail'] = $saveUrl;
         $data['postedby'] = auth()->user()->name;
 
-
-        $data['postedby'] = auth()->user()->name;
         Resep::create($data);
 
         return redirect()->route('admin.resep')->with('success', 'Resep Created');
@@ -77,13 +70,13 @@ class ResepController extends Controller
         ]);
 
         $resep = Resep::find($id);
-        if ($request->thumbnail) {
-            $thumbnail = $request->thumbnail;
-            $thumbnailName = Str::random(10) . $thumbnail->getClientOriginalName();
-            $thumbnail->storeAs('public/thumbnail', $thumbnailName);
-            $data['thumbnail'] = $thumbnailName;
-
-            Storage::delete('public/thumbnail/' . $resep->thumbnail);
+        if ($request->file('thumbnail')) {
+            $image = $request->file('thumbnail');
+            $nameGen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(400, 400)->save('upload/foodsthumbnail/' . $nameGen);
+            $saveUrl = 'http://dapoerneda.my.id/upload/foodsthumbnail/' . $nameGen;
+            $data['thumbnail'] = $saveUrl;
+            $data['postedby'] = auth()->user()->name;
         }
 
         $resep->update($data);
